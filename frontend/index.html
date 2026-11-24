@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ClipAI — AI Shorts Maker</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#0b0b12;color:#f5f3ff;font:15px Inter,system-ui,Arial}header{display:flex;justify-content:space-between;align-items:center;padding:22px max(5%,calc((100% - 1100px)/2));border-bottom:1px solid #282638}.logo{font-size:25px;font-weight:850}.logo span{color:#a78bfa}a{color:#c4b5fd;text-decoration:none}.wrap{max-width:1000px;margin:55px auto;padding:0 20px}.hero{text-align:center;margin-bottom:35px}.tag{color:#c4b5fd;font-size:11px;letter-spacing:2px}.hero h1{font-size:clamp(34px,6vw,58px);margin:14px 0}.hero h1 span{color:#a78bfa}.hero p{color:#a5a1b5;line-height:1.7}.panel{background:#151421;border:1px solid #302b45;border-radius:18px;padding:25px;max-width:760px;margin:auto}.panel label{display:block;margin:14px 0 9px;font-weight:650}.input{width:100%;padding:15px;border:1px solid #39354d;border-radius:10px;background:#0d0c15;color:white}.row{display:flex;gap:12px;align-items:center}.row>*{flex:1}.btn{border:0;border-radius:10px;background:#8054ed;color:white;padding:14px 18px;font-weight:750;cursor:pointer}.upload{border:1px dashed #6c5799;border-radius:12px;padding:22px;text-align:center;color:#c4b5fd;display:block;cursor:pointer}.muted{color:#9692a8;font-size:12px}.status{margin-top:18px;padding:13px;border-radius:10px;background:#211c31;color:#d8c8ff;overflow-wrap:anywhere}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}.feature{background:#151421;border:1px solid #302b45;border-radius:13px;padding:18px}.feature b{display:block;margin-bottom:7px}.feature p{font-size:12px;color:#a5a1b5;line-height:1.6}footer{text-align:center;color:#77738b;padding:35px;font-size:12px}@media(max-width:650px){.features{grid-template-columns:1fr}.row{flex-direction:column}.wrap{margin:35px auto}}
+</style></head>
+<body>
+<header><div class="logo">Clip<span>AI</span></div><a href="admin.html">Admin preview ↗</a></header>
+<main class="wrap">
+<section class="hero"><div class="tag">AI-POWERED VIDEO WORKSPACE</div><h1>Turn long videos into <span>short clips.</span></h1><p>Upload a video you own or have permission to edit. ClipAI can prepare short segments for social platforms.</p></section>
+<section class="panel">
+<label for="video">Upload your video</label>
+<input class="input" id="video" type="file" accept="video/mp4,video/quicktime,video/webm,.m4v">
+<div class="row"><div><label for="duration">Clip length</label><select class="input" id="duration"><option value="15">15 seconds</option><option value="30" selected>30 seconds</option><option value="60">60 seconds</option></select></div><div><label for="ratio">Output format</label><select class="input" id="ratio"><option>9:16 Vertical</option><option>16:9 Landscape</option><option>1:1 Square</option></select></div></div>
+<button class="btn" id="make" style="width:100%;margin-top:18px">✨ Create sample clips</button>
+<div class="status" id="status">Ready. Choose a video file to begin.</div>
+<p class="muted">Starter version: backend connection is required for real video processing. AI highlight detection and automatic subtitles are planned next.</p>
+</section>
+<section class="features"><div class="feature"><b>✦ Highlight detection</b><p>AI will identify engaging moments in supported videos.</p></div><div class="feature"><b>▣ Auto captions</b><p>Malayalam and English subtitle support planned.</p></div><div class="feature"><b>↗ Social formats</b><p>Prepare vertical clips for Shorts and Reels.</p></div></section>
+</main><footer>© 2026 ClipAI · Only upload content you have permission to process.</footer>
+<script>
+const btn=document.getElementById('make'), statusBox=document.getElementById('status');
+btn.addEventListener('click',async()=>{
+ const file=document.getElementById('video').files[0];
+ if(!file){statusBox.textContent='Please choose a video file first.';return}
+ statusBox.textContent='Selected: '+file.name+'. Connect the ClipAI backend to process this video.';
+});
+</script></body></html>
